@@ -51,6 +51,7 @@
     "input-otp": "^1.4.2",
     "lucide-react": "^0.394.0",
     "next": "^16.1.6",
+    "next-themes": "^0.4.6",
     "nodemailer": "^6.9.14",
     "react": "^18.3.1",
     "react-day-picker": "^9.14.0",

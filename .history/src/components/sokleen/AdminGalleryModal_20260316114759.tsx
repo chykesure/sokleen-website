@@ -275,21 +275,16 @@ export default function AdminGalleryModal({ isOpen, onClose }: AdminGalleryModal
   };
 
   return (
-    <Dialog
-      open={isOpen}
-      onOpenChange={(open) => {
-        if (!open) onClose();
-      }}
-    >
+    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent
         className={cn(
           "max-w-6xl lg:max-w-7xl",
           "max-h-[92vh] overflow-y-auto",
-          "p-0",
+          "p-0 gap-0",
           "bg-white border border-gray-200 shadow-2xl rounded-xl"
         )}
       >
-        {/* Header */}
+        {/* Header with close button */}
         <div className="sticky top-0 z-20 bg-white border-b px-6 py-4 flex items-center justify-between">
           <div>
             <DialogTitle className="text-2xl font-bold tracking-tight text-gray-900">
@@ -301,8 +296,8 @@ export default function AdminGalleryModal({ isOpen, onClose }: AdminGalleryModal
           <Button
             variant="ghost"
             size="icon"
-            className="h-10 w-10 rounded-full hover:bg-gray-100 transition-colors"
             onClick={onClose}
+            className="h-10 w-10 rounded-full hover:bg-gray-100 transition-colors"
           >
             <X className="h-5 w-5 text-gray-700" />
             <span className="sr-only">Close</span>
@@ -328,11 +323,13 @@ export default function AdminGalleryModal({ isOpen, onClose }: AdminGalleryModal
             >
               {showAddForm ? (
                 <>
-                  <X className="w-4 h-4 mr-2" /> Cancel
+                  <X className="w-4 h-4 mr-2" />
+                  Cancel
                 </>
               ) : (
                 <>
-                  <Plus className="w-4 h-4 mr-2" /> Add New
+                  <Plus className="w-4 h-4 mr-2" />
+                  Add New
                 </>
               )}
             </Button>
